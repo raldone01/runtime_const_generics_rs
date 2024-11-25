@@ -1,0 +1,10 @@
+cargo-features = ["edition2024"]
+[package]
+name = "runtime_const_generics_rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+replace_with = { version = "0.1.7", default-features = false, features = [
+  "nightly",
+] }
