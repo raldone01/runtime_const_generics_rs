@@ -9,11 +9,11 @@ trait GameObject {
   fn set_debug(&mut self, flag: bool) -> &mut dyn GameObject;
 }
 
-trait GameObjectExt {
+trait GameObjectBoxExt {
   fn set_debug(self: Box<Self>, flag: bool) -> Box<dyn GameObject>;
 }
 
-impl GameObjectExt for dyn GameObject {
+impl GameObjectBoxExt for dyn GameObject {
   fn set_debug(self: Box<Self>, flag: bool) -> Box<dyn GameObject> {
     unsafe {
       let selv = Box::into_raw(self);
